@@ -4,7 +4,12 @@ import Email from "./utility/Email.js";
 import Phone from "./utility/Phone.js";
 
 class GeneralInfo extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const { handleChange } = this.props;
     return (
       <section>
         <h2>Personal Information</h2>
@@ -13,9 +18,10 @@ class GeneralInfo extends Component {
           attributeText="name"
           labelText="full name"
           placeholderTxt="Sara Robinson"
+          onChange={handleChange}
         />
-        <Email />
-        <Phone />
+        <Email onChange={handleChange} />
+        <Phone onChange={handleChange} />
       </section>
     );
   }

@@ -1,5 +1,6 @@
 import { Component } from "react";
 import TextInput from "./utility/TextInput.js";
+import DateInput from "./utility/Date.js";
 
 class Education extends Component {
   render() {
@@ -14,8 +15,10 @@ class Education extends Component {
         <TextInput
           attributeText="degree"
           labelText="degree"
-          placeholderTxt="degree name"
+          placeholderTxt="enter degree name"
         />
+        <DateInput attributeText="eduStarted" labelText="from" />
+        <DateInput attributeText="eduFinished" labelText="to" />
       </section>
     );
   }
