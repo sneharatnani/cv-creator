@@ -6,10 +6,10 @@ class Education extends Component {
       this.props;
     const { uniName, degree, stdStart, stdEnd } = this.props.value;
     return (
-      <section>
-        <h2>Education</h2>
+      <section className="section">
+        <h2 className="form-heading">Education</h2>
         {/* university */}
-        <div>
+        <div className="container">
           <label htmlFor="collage">university/collage name</label>
           <input
             type="text"
@@ -22,7 +22,7 @@ class Education extends Component {
         </div>
 
         {/* degree */}
-        <div>
+        <div className="container">
           <label htmlFor="degree">degree</label>
           <input
             type="text"
@@ -35,7 +35,7 @@ class Education extends Component {
         </div>
 
         {/* std start */}
-        <div>
+        <div className="container">
           <label htmlFor="eduStarted">from</label>
           <input
             type="date"
@@ -47,7 +47,7 @@ class Education extends Component {
         </div>
 
         {/* std end */}
-        <div>
+        <div className="container">
           <label htmlFor="eduFinished">to</label>
           <input
             type="date"

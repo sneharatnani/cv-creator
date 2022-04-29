@@ -6,10 +6,10 @@ class Experience extends Component {
       this.props;
     const { company, position, jobStart, jobEnd, desc } = this.props.value;
     return (
-      <section>
-        <h2>Experience</h2>
+      <section className="section">
+        <h2 className="form-heading">Experience</h2>
         {/* company */}
-        <div>
+        <div className="container">
           <label htmlFor="company">company name</label>
           <input
             type="text"
@@ -22,7 +22,7 @@ class Experience extends Component {
         </div>
 
         {/* position */}
-        <div>
+        <div className="container">
           <label htmlFor="position">position</label>
           <input
             type="text"
@@ -35,7 +35,7 @@ class Experience extends Component {
         </div>
 
         {/* job start */}
-        <div>
+        <div className="container">
           <label htmlFor="jobStarted">from</label>
           <input
             type="date"
@@ -47,7 +47,7 @@ class Experience extends Component {
         </div>
 
         {/* job end */}
-        <div>
+        <div className="container">
           <label htmlFor="jobFinished">to</label>
           <input
             type="date"
@@ -59,7 +59,7 @@ class Experience extends Component {
         </div>
 
         {/* job description */}
-        <div>
+        <div className="container">
           <label htmlFor="description">job description</label>
           <textarea
             id="description"

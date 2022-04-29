@@ -145,7 +145,7 @@ class Main extends Component {
   showForm() {
     const { inputValue } = this.state;
     return (
-      <form>
+      <form className="form">
         <PersonalInfo
           handleName={this.changeName}
           handleEmail={this.changeEmail}

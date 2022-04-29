@@ -10,10 +10,10 @@ class GeneralInfo extends Component {
     const { name, email, phone } = this.props.value;
     return (
       <section>
-        <h2>Personal Information</h2>
+        <h2 className="form-heading">Personal Information</h2>
 
         {/* name */}
-        <div>
+        <div className="container">
           <label htmlFor="name">full name</label>
           <input
             type="text"
@@ -26,7 +26,7 @@ class GeneralInfo extends Component {
         </div>
 
         {/* email */}
-        <div>
+        <div className="container">
           <label htmlFor="email">email</label>
           <input
             type="email"
@@ -39,7 +39,7 @@ class GeneralInfo extends Component {
         </div>
 
         {/* phone */}
-        <div>
+        <div className="container">
           <label htmlFor="phone">Phone number</label>
           <input
             type="tel"
