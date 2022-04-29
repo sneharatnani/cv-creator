@@ -11,7 +11,7 @@ class Main extends Component {
 
     this.state = {
       showPreview: false,
-      previewInfo: {
+      inputValue: {
         name: "",
         email: "",
         phone: "",
@@ -23,42 +23,163 @@ class Main extends Component {
         position: "",
         jobStart: "",
         jobEnd: "",
+        desc: "",
       },
     };
   }
-
-  change = (e) => {
-    e.preventDefault();
-    console.log("hi");
+  // to show and hide the preview
+  handleChange = () => {
     this.setState((prevState) => ({
-      showPreview: true,
+      showPreview: !prevState.showPreview,
+    }));
+  };
+
+  changeName = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        name: e.target.value,
+      },
+    }));
+  };
+
+  changeEmail = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        email: e.target.value,
+      },
+    }));
+  };
+
+  changePhone = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        phone: e.target.value,
+      },
+    }));
+  };
+
+  changeUni = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        uniName: e.target.value,
+      },
+    }));
+  };
+
+  changeDeg = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        degree: e.target.value,
+      },
+    }));
+  };
+
+  eduStart = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        stdStart: e.target.value,
+      },
+    }));
+  };
+
+  eduEnd = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        stdEnd: e.target.value,
+      },
+    }));
+  };
+
+  changeComp = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        company: e.target.value,
+      },
+    }));
+  };
+
+  changeRole = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        position: e.target.value,
+      },
+    }));
+  };
+
+  handleJobStart = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        jobStart: e.target.value,
+      },
+    }));
+  };
+
+  handleJobEnd = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        jobEnd: e.target.value,
+      },
+    }));
+  };
+
+  changeDesc = (e) => {
+    this.setState((prevState) => ({
+      inputValue: {
+        ...prevState.inputValue,
+        desc: e.target.value,
+      },
     }));
   };
 
   showForm() {
+    const { inputValue } = this.state;
     return (
       <form>
-        <PersonalInfo />
-        <Education />
-        <Experience />
-        <Button btnTxt="submit" onClick={this.change} />
+        <PersonalInfo
+          handleName={this.changeName}
+          handleEmail={this.changeEmail}
+          handlePhone={this.changePhone}
+          value={inputValue}
+        />
+        <Education
+          handleUni={this.changeUni}
+          changeDegree={this.changeDeg}
+          handleStdStart={this.eduStart}
+          handleStdEnd={this.eduEnd}
+          value={inputValue}
+        />
+        <Experience
+          changeComp={this.changeComp}
+          changeRole={this.changeRole}
+          handleJobStart={this.handleJobStart}
+          handleJobEnd={this.handleJobEnd}
+          changeDesc={this.changeDesc}
+          value={inputValue}
+        />
       </form>
     );
   }
 
   render() {
+    let { showPreview, inputValue } = this.state;
     return (
       <main>
-        {this.state.showPreview ? (
-          <Preview />
-        ) : (
-          <form>
-            <PersonalInfo />
-            <Education />
-            <Experience />
-            <Button btnTxt="submit" change={this.change} />
-          </form>
-        )}
+        {showPreview ? <Preview previewInfo={inputValue} /> : this.showForm()}
+        <Button
+          change={this.handleChange}
+          btnTxt={showPreview ? "edit" : "submit"}
+        />
       </main>
     );
   }

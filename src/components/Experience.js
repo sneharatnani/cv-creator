@@ -1,24 +1,63 @@
 import { Component } from "react";
-import TextInput from "./utility/TextInput.js";
-import DateInput from "./utility/Date.js";
 
 class Experience extends Component {
   render() {
+    const { changeComp, changeRole, handleJobStart, handleJobEnd, changeDesc } =
+      this.props;
+    const { company, position, jobStart, jobEnd, desc } = this.props.value;
     return (
       <section>
         <h2>Experience</h2>
-        <TextInput
-          attributeText="company"
-          labelText="company name"
-          placeholderTxt="enter company name"
-        />
-        <TextInput
-          attributeText="position"
-          labelText="position"
-          placeholderTxt="position name"
-        />
-        <DateInput attributeText="jobStarted" labelText="from" />
-        <DateInput attributeText="jobFinished" labelText="to" />
+        {/* company */}
+        <div>
+          <label htmlFor="company">company name</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="enter company name"
+            value={company}
+            onChange={changeComp}
+          />
+        </div>
+
+        {/* position */}
+        <div>
+          <label htmlFor="position">position</label>
+          <input
+            type="text"
+            id="position"
+            name="position"
+            placeholder="position name"
+            value={position}
+            onChange={changeRole}
+          />
+        </div>
+
+        {/* job start */}
+        <div>
+          <label htmlFor="jobStarted">from</label>
+          <input
+            type="date"
+            id="jobStarted"
+            name="jobStarted"
+            value={jobStart}
+            onChange={handleJobStart}
+          />
+        </div>
+
+        {/* job end */}
+        <div>
+          <label htmlFor="jobFinished">to</label>
+          <input
+            type="date"
+            id="jobFinished"
+            name="jobFinished"
+            value={jobEnd}
+            onChange={handleJobEnd}
+          />
+        </div>
+
         {/* job description */}
         <div>
           <label htmlFor="description">job description</label>
@@ -26,6 +65,8 @@ class Experience extends Component {
             id="description"
             name="description"
             placeholder="describe your role"
+            value={desc}
+            onChange={changeDesc}
           ></textarea>
         </div>
       </section>

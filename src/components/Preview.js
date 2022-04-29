@@ -6,61 +6,52 @@ class Preview extends Component {
   }
 
   render() {
-    const {
-      name,
-      email,
-      phone,
-      uniName,
-      degree,
-      stdStart,
-      stdEnd,
-      company,
-      position,
-      jobStart,
-      jobEnd,
-    } = this.props;
+    const { previewInfo } = this.props;
     return (
       <div>
         <section>
           <h2>Personal Information</h2>
 
           <h3>name</h3>
-          <p>{name}</p>
+          <p>{previewInfo.name}</p>
 
           <h3>email</h3>
-          <p>{email}</p>
+          <p>{previewInfo.email}</p>
 
           <h3>phone</h3>
-          <p>{phone}</p>
+          <p>{previewInfo.phone}</p>
         </section>
 
         <section>
           <h2>Education</h2>
           <h3>uniName</h3>
-          <p>{uniName}</p>
+          <p>{previewInfo.uniName}</p>
 
           <h3>degree</h3>
-          <p>{degree}</p>
+          <p>{previewInfo.degree}</p>
 
           <h3>from</h3>
-          <p>{stdStart}</p>
+          <p>{previewInfo.stdStart}</p>
 
           <h3>to</h3>
-          <p>{stdEnd}</p>
+          <p>{previewInfo.stdEnd}</p>
 
           <section>
             <h2>job Experience</h2>
             <h3>company</h3>
-            <p>{company}</p>
+            <p>{previewInfo.company}</p>
 
             <h3>position</h3>
-            <p>{position}</p>
+            <p>{previewInfo.position}</p>
 
             <h3>from</h3>
-            <p>{jobStart}</p>
+            <p>{previewInfo.jobStart}</p>
 
             <h3>to</h3>
-            <p>{jobEnd}</p>
+            <p>{previewInfo.jobEnd}</p>
+
+            <h3>job description</h3>
+            <p>{previewInfo.desc}</p>
           </section>
         </section>
       </div>
