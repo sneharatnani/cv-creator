@@ -2,9 +2,9 @@ import { Component } from "react";
 
 class Experience extends Component {
   render() {
-    const { changeComp, changeRole, handleJobStart, handleJobEnd, changeDesc } =
-      this.props;
+    const { handleInput } = this.props;
     const { company, position, jobStart, jobEnd, desc } = this.props.value;
+
     return (
       <section className="section">
         <h2 className="form-heading">Experience</h2>
@@ -15,9 +15,9 @@ class Experience extends Component {
             type="text"
             id="company"
             name="company"
-            placeholder="enter company name"
+            placeholder="Enter company name"
             value={company}
-            onChange={changeComp}
+            onChange={handleInput}
           />
         </div>
 
@@ -28,9 +28,9 @@ class Experience extends Component {
             type="text"
             id="position"
             name="position"
-            placeholder="position name"
+            placeholder="Position Name"
             value={position}
-            onChange={changeRole}
+            onChange={handleInput}
           />
         </div>
 
@@ -42,7 +42,7 @@ class Experience extends Component {
             id="jobStarted"
             name="jobStarted"
             value={jobStart}
-            onChange={handleJobStart}
+            onChange={handleInput}
           />
         </div>
 
@@ -54,7 +54,7 @@ class Experience extends Component {
             id="jobFinished"
             name="jobFinished"
             value={jobEnd}
-            onChange={handleJobEnd}
+            onChange={handleInput}
           />
         </div>
 
@@ -64,9 +64,9 @@ class Experience extends Component {
           <textarea
             id="description"
             name="description"
-            placeholder="describe your role"
+            placeholder="Describe your role"
             value={desc}
-            onChange={changeDesc}
+            onChange={handleInput}
           ></textarea>
         </div>
       </section>

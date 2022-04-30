@@ -2,9 +2,9 @@ import { Component } from "react";
 
 class Education extends Component {
   render() {
-    const { handleUni, changeDegree, handleStdStart, handleStdEnd } =
-      this.props;
+    const { handleInput } = this.props;
     const { uniName, degree, stdStart, stdEnd } = this.props.value;
+
     return (
       <section className="section">
         <h2 className="form-heading">Education</h2>
@@ -15,9 +15,9 @@ class Education extends Component {
             type="text"
             id="collage"
             name="collage"
-            placeholder="school/collage/university"
+            placeholder="School/Collage/University"
             value={uniName}
-            onChange={handleUni}
+            onChange={handleInput}
           />
         </div>
 
@@ -28,9 +28,9 @@ class Education extends Component {
             type="text"
             id="degree"
             name="degree"
-            placeholder="enter degree name"
+            placeholder="Enter degree name"
             value={degree}
-            onChange={changeDegree}
+            onChange={handleInput}
           />
         </div>
 
@@ -42,7 +42,7 @@ class Education extends Component {
             id="eduStarted"
             name="eduStarted"
             value={stdStart}
-            onChange={handleStdStart}
+            onChange={handleInput}
           />
         </div>
 
@@ -54,7 +54,7 @@ class Education extends Component {
             id="eduFinished"
             name="eduFinished"
             value={stdEnd}
-            onChange={handleStdEnd}
+            onChange={handleInput}
           />
         </div>
       </section>

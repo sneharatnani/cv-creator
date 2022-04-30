@@ -6,8 +6,9 @@ class GeneralInfo extends Component {
   }
 
   render() {
-    const { handleName, handleEmail, handlePhone } = this.props;
+    const { handleInput } = this.props;
     const { name, email, phone } = this.props.value;
+
     return (
       <section>
         <h2 className="form-heading">Personal Information</h2>
@@ -21,7 +22,7 @@ class GeneralInfo extends Component {
             name="name"
             placeholder="Sara Robinson"
             value={name}
-            onChange={handleName}
+            onChange={handleInput}
           />
         </div>
 
@@ -34,7 +35,7 @@ class GeneralInfo extends Component {
             name="email"
             placeholder="abc@gmail.com"
             value={email}
-            onChange={handleEmail}
+            onChange={handleInput}
           />
         </div>
 
@@ -47,7 +48,7 @@ class GeneralInfo extends Component {
             name="phone"
             placeholder="1234567890"
             value={phone}
-            onChange={handlePhone}
+            onChange={handleInput}
           />
         </div>
       </section>
